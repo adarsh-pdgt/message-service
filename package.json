@@ -1,0 +1,41 @@
+{
+  "name": "message-service",
+  "version": "0.1.0",
+  "description": "Messaging microservice helps to send messages to any users or group",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "prepare": "husky install"
+  },
+  "keywords": [
+    "nodejs",
+    "chat",
+    "microservice"
+  ],
+  "author": "Adarsh Pathak",
+  "license": "ISC",
+  "devDependencies": {
+    "husky": "^8.0.0",
+    "jest": "^29.6.4"
+  },
+  "dependencies": {
+    "@socket.io/admin-ui": "^0.5.1",
+    "@socket.io/mongo-adapter": "^0.3.0",
+    "@socket.io/redis-streams-adapter": "^0.1.0",
+    "axios": "^1.5.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "joi": "^17.10.1",
+    "luxon": "^3.4.2",
+    "mongodb": "^6.0.0",
+    "mongoose": "^7.5.0",
+    "nodemon": "^3.0.1",
+    "redis": "^4.6.8",
+    "socket.io": "^4.7.2"
+  },
+  "optionalDependencies": {
+    "bufferutil": "^4.0.7",
+    "utf-8-validate": "^6.0.3"
+  }
+}
