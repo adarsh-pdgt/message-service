@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "start": "pm2 start ecosystem.config.json --no-daemon"
   },
   "keywords": [
     "nodejs",
@@ -21,6 +22,7 @@
   "dependencies": {
     "@socket.io/admin-ui": "^0.5.1",
     "@socket.io/mongo-adapter": "^0.3.0",
+    "@socket.io/pm2": "^5.3.0",
     "@socket.io/redis-streams-adapter": "^0.1.0",
     "axios": "^1.5.0",
     "cors": "^2.8.5",
@@ -32,7 +34,8 @@
     "mongoose": "^7.5.0",
     "nodemon": "^3.0.1",
     "redis": "^4.6.8",
-    "socket.io": "^4.7.2"
+    "socket.io": "^4.7.2",
+    "uuid": "^9.0.1"
   },
   "optionalDependencies": {
     "bufferutil": "^4.0.7",
