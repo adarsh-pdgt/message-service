@@ -24,10 +24,6 @@ const server = http.createServer(app);
 app.use(cors());
 
 const io = new Server(server, {
-  cors: {
-    origin: ["https://admin.socket.io"],
-    credentials: true,
-  },
   adapter: createAdapter(redisClient)
 });
 
