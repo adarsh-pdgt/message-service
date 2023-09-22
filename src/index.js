@@ -12,7 +12,7 @@ const {sendMesage, isValidRoomId} = require("./services/message.service");
 const {ObjectRooms, Message} = require("./models/messages.models");
 const { v4: uuidv4 } = require('uuid');
 const {dmRoomValidation, listMessageValidation, sendMessageValidation} = require('./validations/message.validations');
-const redisClient = createClient({ host: "localhost", port: 6379 });
+const redisClient = createClient(config.redis.url);
 redisClient.connect();
 
 mongoose.connect(config.mongoose.url).then(() => {
@@ -135,4 +135,4 @@ io.on('connection', (socket) => {
 
 });
 
-server.listen(3001, () => 'Server is running on port 3000');
+server.listen(config.port, () => 'Server is running on port 3000');
