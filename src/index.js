@@ -14,7 +14,11 @@ const { v4: uuidv4 } = require('uuid');
 const {dmRoomValidation, listMessageValidation, sendMessageValidation} = require('./validations/message.validations');
 
 const redisClient = createClient({ host: "ec2-pulumi-dev-redis.r09fr9.0001.usw2.cache.amazonaws.com", port: 6379 });
-redisClient.connect();
+redisClient.connect().then(
+  () => {
+    console.info("Connected to Redis");
+  }
+);
 
 mongoose.connect(config.mongoose.url).then(() => {
   console.info('Connected to MongoDB');
