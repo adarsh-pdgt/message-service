@@ -12,7 +12,8 @@ const {sendMesage, isValidRoomId} = require("./services/message.service");
 const {ObjectRooms, Message} = require("./models/messages.models");
 const { v4: uuidv4 } = require('uuid');
 const {dmRoomValidation, listMessageValidation, sendMessageValidation} = require('./validations/message.validations');
-const redisClient = createClient(config.redis.url);
+
+const redisClient = createClient({ host: "ec2-pulumi-dev-redis.r09fr9.0001.usw2.cache.amazonaws.com", port: 6379 });
 redisClient.connect();
 
 mongoose.connect(config.mongoose.url).then(() => {
