@@ -39,7 +39,7 @@ async function createOneToOneMessageRoom(createdBy, roomId, participantId){
         await messageRoom.save();
     }
     await createObjectRooms(createdBy, roomId, true);
-    await createObjectRooms(participantId, roomId, false);
+    await createObjectRooms(participantId, roomId, true);
 }
 
 
